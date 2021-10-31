@@ -22,7 +22,7 @@
                 <div class="card-header">{{ __('Component') }}</div>
 
                 <div class="card-body">
-                    <button type="button" class="btn btn-primary">Index</button>
+                    <a href="{{ route('component:index') }}" type="button" class="btn btn-primary">Index</a>
                 </div>
             </div>
         </div>
