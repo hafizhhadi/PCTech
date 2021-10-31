@@ -67,9 +67,9 @@ class ComponentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Component $component)
     {
-        //
+        return view('component.edit',compact('component'));
     }
 
     /**
@@ -79,9 +79,17 @@ class ComponentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Component $component)
     {
-        //
+        $component->processor = $request->processor;
+        $component->motherboard = $request->motherboard;
+        $component->ram = $request->ram;
+        $component->casing = $request->casing;
+        $component->storage = $request->storage;
+        $component->powersupply = $request->powersupply;
+        $component->save();
+
+        return redirect()->route('component:index');
     }
 
     /**
@@ -90,8 +98,10 @@ class ComponentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Component $component)
     {
-        //
+        $component->delete();
+        
+        return redirect()->route('component:index');
     }
 }

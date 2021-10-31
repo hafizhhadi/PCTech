@@ -20,6 +20,7 @@
                             <th scope="col">casing</th>
                             <th scope="col">storage</th>
                             <th scope="col">powersupply</th>
+                            <th scope="col">Action</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -32,6 +33,8 @@
                             <td>{{ $component->casing }}</td>
                             <td>{{ $component->storage }}</td>
                             <td>{{ $component->powersupply }}</td>
+                            <td><a href="{{ route('component:edit',$component) }}" type="button" class="btn btn-warning">Edit</a></td>
+                            <td><a href="{{ route('component:delete',$component) }}" type="button" class="btn btn-danger">Delete</a></td>
                           </tr>
                           @endforeach
                         </tbody>

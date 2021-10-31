@@ -28,3 +28,6 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/component/index', [ComponentController::class, 'index'])->name('component:index');
 Route::get('/component/create', [ComponentController::class, 'create'])->name('component:create');
 Route::post('/component/store', [ComponentController::class, 'store'])->name('component:store');
+Route::get('/component/edit/{component}', [ComponentController::class, 'edit'])->name('component:edit');
+Route::post('/component/update/{component}', [ComponentController::class, 'update'])->name('component:update');
+Route::get('/component/delete/{component}', [ComponentController::class, 'destroy'])->name('component:delete');
