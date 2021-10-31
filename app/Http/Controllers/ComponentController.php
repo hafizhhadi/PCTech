@@ -14,7 +14,8 @@ class ComponentController extends Controller
      */
     public function index()
     {
-        return view('component.index');
+        $components = Component::all();
+        return view('component.index',compact('components'));
     }
 
     /**
