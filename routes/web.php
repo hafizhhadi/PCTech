@@ -26,3 +26,5 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 //feature component
 
 Route::get('/component/index', [ComponentController::class, 'index'])->name('component:index');
+Route::get('/component/create', [ComponentController::class, 'create'])->name('component:create');
+Route::post('/component/store', [ComponentController::class, 'store'])->name('component:store');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Component;
 use Illuminate\Http\Request;
 
 class ComponentController extends Controller
@@ -23,7 +24,7 @@ class ComponentController extends Controller
      */
     public function create()
     {
-        //
+        return view('component.create');
     }
 
     /**
@@ -34,7 +35,18 @@ class ComponentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $component = new Component();
+        $component->processor = $request->processor;
+        $component->motherboard = $request->motherboard;
+        $component->ram = $request->ram;
+        $component->casing = $request->casing;
+        $component->storage = $request->storage;
+        $component->powersupply = $request->powersupply;
+
+        $component->save();
+
+        return redirect()->route('component:index');
+
     }
 
     /**
