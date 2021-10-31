@@ -17,6 +17,14 @@
                     {{ __('You are logged in!') }}
                 </div>
             </div>
+            <br>
+            <div class="card">
+                <div class="card-header">{{ __('Component') }}</div>
+
+                <div class="card-body">
+                    <button type="button" class="btn btn-primary">Index</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
