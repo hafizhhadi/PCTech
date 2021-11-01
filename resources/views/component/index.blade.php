@@ -38,7 +38,7 @@
                             <td>{{ $component->storage }}</td>
                             <td>{{ $component->powersupply }}</td>
                             <td><a href="{{ route('component:edit',$component) }}" type="button" class="btn btn-warning">Edit</a></td>
-                            <td><a href="{{ route('component:delete',$component) }}" type="button" class="btn btn-danger">Delete</a></td>
+                            <td><a onclick="return confirm('Are you sure to delete this component?')" href="{{ route('component:delete',$component) }}" type="button" class="btn btn-danger">Delete</a></td>
                           </tr>
                           @endforeach
                         </tbody>
