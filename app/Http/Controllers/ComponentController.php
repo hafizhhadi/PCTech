@@ -46,8 +46,10 @@ class ComponentController extends Controller
 
         $component->save();
 
-        return redirect()->route('component:index');
-
+        return redirect()->route('component:index')->with([
+        'alert-type' => 'alert-success',
+        'alert-message' => 'Component Added',
+        ]);
     }
 
     /**
@@ -89,7 +91,10 @@ class ComponentController extends Controller
         $component->powersupply = $request->powersupply;
         $component->save();
 
-        return redirect()->route('component:index');
+        return redirect()->route('component:index')->with([
+            'alert-type' => 'alert-warning',
+            'alert-message' => 'Component has been edited'
+        ]);
     }
 
     /**
@@ -102,6 +107,9 @@ class ComponentController extends Controller
     {
         $component->delete();
         
-        return redirect()->route('component:index');
+        return redirect()->route('component:index')->with([
+            'alert-type' => 'alert-danger',
+            'alert-message' => 'Component has been deleted'
+        ]);
     }
 }

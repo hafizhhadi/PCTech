@@ -8,7 +8,11 @@
                 <div class="card-header">{{ __('Index Component') }}</div>
 
                 <div class="card-body">
-                  
+                    @if( session()->has('alert-message'))
+                    <div class="alert {{ session()->get('alert-type') }}">
+                        {{ session()->get('alert-message') }}
+                    </div>
+                    @endif
                     <a href="{{ route('component:create') }}" type="button" class="btn btn-info">create</a>
                     <table class="table">
                         <thead>
